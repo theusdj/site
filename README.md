@@ -11,7 +11,7 @@ Site estático (HTML + JS, sem build) ligado ao **Supabase**: banco PostgreSQL, 
 ## Passo a passo
 1. Crie um projeto grátis em supabase.com.
 2. **SQL Editor** → cole e rode todo o `schema.sql`.
-3. **Authentication → Providers → Email**: desative *Allow new users to sign up* (só a organização entra). Em **Authentication → Sign In / Providers → Email**, reduza *Minimum password length* para **5**. Em **Users → Add user**, crie o e-mail `admin@abelarena.com` (o mesmo de `adminEmail` no `config.js`) com a senha de acesso. O painel `#admin` pede apenas a senha.
+3. **Authentication → Providers → Email**: desative *Allow new users to sign up* (só a organização entra). Em **Authentication → Sign In / Providers → Email**, reduza *Minimum password length* para **5**. Em **Users → Add user**, crie o e-mail `admin@abelarena.com` (o mesmo de `adminEmail` no `config.js`) com a senha **`theus@abel`**. O painel (`/admin` na barra de pesquisa) pede só a senha: a pessoa digita **theus** e o site completa o `@abel` sozinho (isso evita o limite mínimo de 6 caracteres do Supabase).
 4. Rode no SQL Editor (troque o e-mail):
    `insert into profiles(id,name,role) select id,'Seu nome','admin' from auth.users where email='admin@abelarena.com';`
 5. **Project Settings → API**: copie *Project URL* e a chave **anon public** para o `config.js`.
